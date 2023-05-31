@@ -468,3 +468,100 @@ def say_hello():
 	
 say_hello()
 say_hello() # Return 2 times
+```
+
+## Generators
+**Generators are functions that return an object can be iterated over and special thing is that they generate the items inside the object lazily which means they generate the tiems only one at a time and only when you ask for it
+and because of it they are much more memory efficient than other sequence objects when you have to deal with large data sets.**
+- very memory efficient
+
+```python
+def mygenerator():
+	yield 1
+	yield 2
+	yield 3
+g = mygenerator()
+print(g) # print <generator object ... >
+# for i in g:
+# 	print(i) # print 1 2 3
+value = next(g)
+print(value) # 1
+value = next(g)
+print(value) # 2
+value = next(g)
+print(value) # 3
+value = next(g)
+print(value) # StorIteration Exception
+
+sum(g) # 6
+sorted(g) # [1,2,3]
+```
+another example:
+```python
+def countdown(num):
+	print('Starting')
+	while num > 0:
+		yield num
+		num -= 1
+cd = countdown(4) # not execute Starting
+value = next(cd) # execute
+print(value) # 4
+print(next(cd)) # 3
+print(next(cd)) # 2
+print(next(cd)) # 1
+print(next(cd)) # StopIteration
+```
+how its memory efficient?
+```python
+import sys
+
+def firstn(n):
+	nums = []
+	num = 0
+	while num < n:
+		nums.append(num)
+		num += 1
+	return nums
+
+my_list = firstn(10) # [0,1,...,9]
+
+def fristn_generator(n): # we dont need list anymore
+	num = 0
+	while num < n:
+		yield num # just one variable addressed until we get it not save in store.
+		num += 1
+		
+print(sum(firstn(10))) #45
+print(sum(firstn_generator(10))) #45
+
+print(sys.getsizeof(firstn(10))) # 192
+print(sys.getsizeof(firstn_generator(10))) # 120
+
+print(sys.getsizeof(firstn(1000000))) # 8697464
+print(sys.getsizeof(firstn_generator(1000000))) # 120
+```
+
+**another important advantage of the generator object is that we do not have to wait until all the elements have been generated before we start to use them because we can get just get first next statement and we don't have to calculate all the numbers YEAH**
+
+```python
+def fibonacci(limit):
+	# 0 1 1 2 3 5 8 13...
+	a, b = 0, 1
+	while a < limit:
+		yield a
+		a, b = b, a+b
+
+fib = fibonacci(30)
+for i in fib:
+	print(i)
+```
+
+```python
+import sys
+mylist = [i for i in range(10000000) if i % 2 == 0]
+print(sys.getsizeof(mylist)) 4066496
+mygenerator = (i for i in range(10000000) if i % 2 == 0)  # Shortcut of generator :)
+print(sys.getsizeof(mygenerator)) 120
+for i in mygenerator:
+	print(i)
+```
