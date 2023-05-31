@@ -1,5 +1,6 @@
+[Tutorial](https://www.youtube.com/watch?v=EtAGd-3arNE&list=PLqnslRFeH2UqLwzS0AwKDKLrpYBKzLBy2&index=11)
 
-### Lists:
+## Lists:
 Ordered - Mutable - Allows duplicate elements
 * We want 5 zeros in a list  => `a = [0] * 5`
 * Concat with + operator
@@ -7,7 +8,7 @@ Ordered - Mutable - Allows duplicate elements
 * list_copy = list_org => if append to org, appended to copy too
 * list_copy = list_org.copy() or list(list_org) or list[:] => if append to org not appended to copy.
 
-### Tuples:
+## Tuples:
 Ordered. - Immutable - allows duplicate elements
 * my_tuple = ("Max") => identified as a string ( only in single element tuple )
 * my_tuple = ("Max", ) => identified as a tuple
@@ -23,7 +24,7 @@ print(i2) # [1,2,3]
 * tuples in time and memory usage is better than lists (but immutable)
 
 
-### Dicts
+## Dicts
 Key-value pairs, Unordered, Mutable
 * dict(name="A") is = {'name' : 'A'}
 * del my_dict['name'] => delete key and value
@@ -198,5 +199,113 @@ def test_value(x):
 		raise ValueTooHighError('value is too high')
 	if x < 50
 		raise ValueTooSmallError('value is to small', x)
-    
+		
+```
+
+## Logging
+```python
+# main.py
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%m/%d/%Y %H:%M:%S')
+# logging.debug('debug')
+# logging.info('info')
+# logging.warning('warning')
+# logging.error('error')
+# logging.critical('critical')
+import helper
+
+# helper.py
+logger = logging.getLogger(__name__)
+logger.info("hello from helper")
+```
+There are more details about logging that i dont need them yet
+
+
+## JSON
+dict to json => Serialization / Encoding
+personJSON = json.dumps(person, indent=4, sort_keys=True) # dumps mean dump to string
+dump used for write dictionary as a JSON in a file
+
+json to dict => Deserialization / Decoding
+person = json.loads(personJSON) # loads mean load from string
+load used for load json from file
+
+```python
+from json import JSONEncoder
+import json
+class User:
+	def __init__(self,name,age):
+		self.name = name
+		self.age = age
+user = User('Max', 27)
+# Encode
+# userJSON = json.dumps(user) we will get type error
+def encode_user(obj):
+	if isinstance(obj,User): # its check obj is instance of User Class
+		return {'name': obj.name, 'age': obj.age,
+				obj.__class__.__name__:True}
+	else:
+		raise TypeError('Object of type User is not JSON serializable')
+
+userJSON = json.dumps(user, default=encode_user)
+print(userJSON)
+
+# or we can use JSONEncoder Class
+class UserEncoder(JSONEncoder):
+	def default(self,obj): # Override default method JSONEncoder Class
+		if isinstance(obj,User):
+		return {'name': obj.name, 'age': obj.age,
+				obj.__class__.__name__:True}
+		return JSONEncoder.default(self,obj)
+	
+userJSON = json.dumps(user, cls=UserEncoder)
+#OR
+userJSON = UserEncoder().encode(user)
+print(userJSON)
+
+# Decode back
+user = json.loads(userJSON)
+print(type(user)) # is dict not object
+user.name # we get error because it returns Dict not class instance
+def decode_user(dct):
+	if User.__name__ in dct:
+		return User(name=dct['name'], age=dct['age'])
+	return dct
+user = json.loads(userJSON, object_hook=decode_user)
+print(type(user)) # is class
+print(user.name) # it works 
+```
+
+## Random numbers:
+### Not recommended for scurity purposes
+a = random.random()
+a = random.uniform(1,10)
+a = random.randint(1, 10)
+a = random.randrange(1,10)
+a = random.normalvariate(0, 1) # normal distrobution
+mylist = list("ABCDEFGH")
+a = random.choice(mylist)
+a = random.sample(mylist,3)
+a = random.choices(mylist,k=3) # Repeat is ok
+random.shuffle(mylist)
+print(mylist)
+random.seed(1)
+print(random.random()) # Psudo random because reproducable
+random.seed(1)
+print(random.random()) # Exact same
+### For security perposes use secrets
+import secrets # => true random numbers
+a = secrets.randbits(4) # 1101
+mylist = list("ABCDEFGH")
+a = secrets.choice(mylist)
+
+import numpy as np
+its psudo random too and not recommended for security purposess
+```python
+a = np.random.rand(3)
+a = np.random.rand(3,3)
+a = np.random.randint(0,10,(3,3))
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(arr)
+np.random.shuffle(arr)
+print(a)
 ```
