@@ -9,7 +9,7 @@ Python Cheatsheet: [Here](https://github.com/F4RAN/cheatsheet/blob/main/PY.md)
 
 [3- Depth-First Search](https://github.com/F4RAN/cheatsheet/blob/main/dfs.py)
 - [3.1- DFS in Matrix](https://github.com/F4RAN/cheatsheet/blob/main/dfs_matrix.py)
-- [3.2- DFS in RegEx Match](https://github.com/F4RAN/cheatsheet/blob/main/dfs_regex_match.py)([tutorial](https://www.youtube.com/watch?v=HAA8mgxlov8&t=240s))
+- [3.2- DFS in RegEx Match](https://github.com/F4RAN/cheatsheet/blob/main/dfs_regex_match.py) ([Video tutorial](https://www.youtube.com/watch?v=HAA8mgxlov8&t=240s))
 
 [4- Sliding Window](https://github.com/F4RAN/cheatsheet/blob/main/sliding_window.py)
 
