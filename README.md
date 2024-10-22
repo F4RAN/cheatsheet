@@ -14,7 +14,7 @@ Python Cheatsheet: [Here](https://github.com/F4RAN/cheatsheet/blob/main/PY.md)
 [4- Sliding Window](https://github.com/F4RAN/cheatsheet/blob/main/sliding_window.py)
 
 [5- Two Pointers](https://github.com/F4RAN/cheatsheet/blob/main/two_pointers_max_area.py) ([11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/))
-
+- [5.1- Swap Nodes in Pairs (Linked list)](https://github.com/F4RAN/cheatsheet/blob/main/two_pointers_swap_linked_list.py) ([24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/description/))
 
 ## Applications:
 ### BFS
