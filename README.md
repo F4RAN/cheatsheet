@@ -16,8 +16,8 @@ Python Cheatsheet: [Here](https://github.com/F4RAN/cheatsheet/blob/main/PY.md)
 [5- Two Pointers](https://github.com/F4RAN/cheatsheet/blob/main/two_pointers_max_area.py) ([11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/))
 - [5.1- Swap Nodes in Pairs (Linked list)](https://github.com/F4RAN/cheatsheet/blob/main/two_pointers_swap_linked_list.py) ([24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/description/))
 
-6- Math
-- [6.1- Division using shift](https://github.com/F4RAN/cheatsheet/blob/main/math_divide.py)([29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers))
+[6- Math]()
+- [6.1- Division using shift](https://github.com/F4RAN/cheatsheet/blob/main/math_divide.py) ([29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers))
 ## Applications:
 ### BFS
 
