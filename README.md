@@ -25,8 +25,9 @@ Python Cheatsheet: [Here](https://github.com/F4RAN/cheatsheet/blob/main/PY.md)
 ## Applications:
 
 ### Graphs
-1) ** The Cycle Meeting Law (Floyd’s Principle) **
+1) **The Cycle Meeting Law (Floyd’s Principle)**
 In a closed loop (cycle) of length k, if two agents move in the same direction at constant speeds and the faster agent moves r steps more than the slower agent per turn (where r > 0), the faster agent will always meet the slower agent in at most k / gcd(k, r) turns.
+So we can use slow/fast pointers to achieved that a graph has a loop or not
 
 
 
