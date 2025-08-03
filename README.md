@@ -18,7 +18,18 @@ Python Cheatsheet: [Here](https://github.com/F4RAN/cheatsheet/blob/main/PY.md)
 
 [6- Math]()
 - [6.1- Division using shift](https://github.com/F4RAN/cheatsheet/blob/main/math_divide.py) ([29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers))
+
+[7- Graphs]()
+- [7.1- Floyd's Law (Has written bottom: Graphs - 1) ([141. Linked List Cycle](https://leetcode.com/problems/divide-two-integers](https://leetcode.com/problems/linked-list-cycle/)))
+- 
 ## Applications:
+
+### Graphs
+1) ** The Cycle Meeting Law (Floyd’s Principle) **
+In a closed loop (cycle) of length k, if two agents move in the same direction at constant speeds and the faster agent moves r steps more than the slower agent per turn (where r > 0), the faster agent will always meet the slower agent in at most k / gcd(k, r) turns.
+
+
+
 ### BFS
 
 1) **Shortest Path in an Unweighted Graph:**
