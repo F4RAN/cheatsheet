@@ -20,7 +20,7 @@ Python Cheatsheet: [Here](https://github.com/F4RAN/cheatsheet/blob/main/PY.md)
 - [6.1- Division using shift](https://github.com/F4RAN/cheatsheet/blob/main/math_divide.py) ([29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers))
 
 [7- Graphs]()
-- [7.1- Floyd's Law (Has written bottom: Graphs - 1) ([141. Linked List Cycle](https://leetcode.com/problems/divide-two-integers](https://leetcode.com/problems/linked-list-cycle/)))
+- [7.1- Floyd's Law (Has written bottom: Graphs - 1)] ([141. Linked List Cycle](https://leetcode.com/problems/divide-two-integers](https://leetcode.com/problems/linked-list-cycle/)))
 - 
 ## Applications:
 
