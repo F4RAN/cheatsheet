@@ -6,7 +6,8 @@ Python Cheatsheet: [Here](https://github.com/F4RAN/cheatsheet/blob/main/PY.md)
 
 [2- Breadth-First Search](https://github.com/F4RAN/cheatsheet/blob/main/bfs.py)
 - [2.1- BFS in Matrix](https://github.com/F4RAN/cheatsheet/blob/main/bfs_matrix.py)
-
+- [2.2- Kahn BFS](https://github.com/F4RAN/cheatsheet/blob/main/bfs_kahn.py)([207. Course schedule](https://leetcode.com/problems/course-schedule/))
+  
 [3- Depth-First Search (Backtrack)](https://github.com/F4RAN/cheatsheet/blob/main/dfs.py)
 - [3.1- DFS in Matrix](https://github.com/F4RAN/cheatsheet/blob/main/dfs_matrix.py)
 - [3.2- DFS in RegEx Match](https://github.com/F4RAN/cheatsheet/blob/main/dfs_regex_match.py) ([Video tutorial](https://www.youtube.com/watch?v=HAA8mgxlov8&t=240s))
